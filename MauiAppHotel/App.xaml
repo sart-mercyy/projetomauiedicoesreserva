@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Paleta: verde-petróleo + coral sobre fundo creme -->
+            <Color x:Key="Principal">#1F5F5B</Color>
+            <Color x:Key="Destaque">#D9534F</Color>
+            <Color x:Key="Fundo">#FAF7F2</Color>
+            <Color x:Key="Campo">#E6E1D6</Color>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#222222" />
+            </Style>
+            <Style TargetType="Label" x:Key="Titulo">
+                <Setter Property="TextColor" Value="{StaticResource Principal}" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="#222222" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Campo}" />
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="#222222" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Campo}" />
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="TextColor" Value="#222222" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Campo}" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Principal}" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style TargetType="Button" x:Key="BotaoPerigo">
+                <Setter Property="BackgroundColor" Value="{StaticResource Destaque}" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

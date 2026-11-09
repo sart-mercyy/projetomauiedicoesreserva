@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ListaReservas"
+             Title="Reservas"
+             BackgroundColor="{StaticResource Fundo}">
+
+    <Grid RowDefinitions="Auto,*" Padding="20" RowSpacing="10">
+
+        <Label x:Name="lblTotal" Style="{StaticResource Titulo}" FontSize="18" />
+
+        <CollectionView x:Name="colReservas" Grid.Row="1">
+            <CollectionView.EmptyView>
+                <Label Text="Nenhuma reserva cadastrada." />
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="0,8" Spacing="4">
+                        <Label Text="{Binding Hospede}" FontAttributes="Bold" FontSize="16" />
+                        <Label Text="{Binding QuartoDescricao}" />
+                        <Label Text="{Binding Periodo}" />
+                        <Label Text="{Binding Ocupacao}" />
+                        <Label Text="{Binding ValorFormatado}" FontAttributes="Bold"
+                               TextColor="{StaticResource Destaque}" />
+                        <Button Text="Cancelar reserva" Style="{StaticResource BotaoPerigo}"
+                                HeightRequest="40" HorizontalOptions="Start"
+                                CommandParameter="{Binding .}" Clicked="OnCancelarClicked" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>
